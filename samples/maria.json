@@ -1,0 +1,54 @@
+{
+  "id": "maria",
+  "label": "Maria Elena Ruiz, flower seller",
+  "blurb": "Cempasuchil by the armful, and a bicycle bell you could hear two streets away.",
+  "person": {
+    "name": "Maria Elena Ruiz",
+    "called": "Nana",
+    "born": "1944",
+    "died": "2019",
+    "relation": "grandmother, sold flowers at the market for thirty years"
+  },
+  "cards": [
+    {
+      "text": "Nana sold cempasuchil at the market for thirty years, and she would not sell a bunch she had not held up to the light first.",
+      "by": "Sofia",
+      "year": ""
+    },
+    {
+      "text": "She rode a bicycle with a bell she had painted orange, and you could hear it two streets away.",
+      "by": "Diego",
+      "year": "1989"
+    },
+    {
+      "text": "She kept a tin of salt in her apron for the day she would need it, and nobody ever saw the day.",
+      "by": "Sofia",
+      "year": ""
+    },
+    {
+      "text": "Her hands were always cold, even in August, and she thought it was funny.",
+      "by": "Diego",
+      "year": ""
+    },
+    {
+      "text": "Sofia remembers that she sang while she wrapped the flowers, mostly songs off the radio.",
+      "by": "Sofia",
+      "year": ""
+    },
+    {
+      "text": "Diego remembers that she never made a sound while she wrapped the flowers, because the market was loud enough already.",
+      "by": "Diego",
+      "year": "2012"
+    },
+    {
+      "text": "She made pan de muerto every year and blamed the yeast for whatever went wrong.",
+      "by": "Sofia",
+      "year": ""
+    },
+    {
+      "text": "On the last night she worked, she wrapped the last bunch in newspaper so it would not bruise and set it on her own step.",
+      "by": "Diego",
+      "year": "2014"
+    }
+  ]
+}

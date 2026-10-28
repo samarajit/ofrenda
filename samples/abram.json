@@ -1,0 +1,64 @@
+{
+  "id": "abram",
+  "label": "Abram Flores, barber",
+  "blurb": "One chair, one radio, forty-one years on South Sixth Street.",
+  "person": {
+    "name": "Abram Flores",
+    "called": "Abe",
+    "born": "1931",
+    "died": "2011",
+    "relation": "grandfather, barber on South Sixth Street"
+  },
+  "cards": [
+    {
+      "text": "Abram Flores cut hair on South Sixth Street for forty-one years, in a shop with one chair and a radio that only got the Spanish station.",
+      "by": "Elena",
+      "year": "1998"
+    },
+    {
+      "text": "He kept a bowl of tamarind candies by the register for the children who came in with their fathers.",
+      "by": "Rosa",
+      "year": ""
+    },
+    {
+      "text": "Once a boy fell asleep in the chair and Abram let him sleep an hour past closing, sweeping around him.",
+      "by": "Elena",
+      "year": "2001"
+    },
+    {
+      "text": "Elena remembers that he hummed while he swept up, the same three notes over and over.",
+      "by": "Elena",
+      "year": ""
+    },
+    {
+      "text": "Rosa remembers that he never made a sound while he swept, not one.",
+      "by": "Rosa",
+      "year": ""
+    },
+    {
+      "text": "He called every grandchild mijo, including the girls.",
+      "by": "Delia",
+      "year": ""
+    },
+    {
+      "text": "He kept the barber pole in the garage after 2009, wrapped in a bedsheet, and would not throw it out.",
+      "by": "Rosa",
+      "year": "2013"
+    },
+    {
+      "text": "He learned to cut hair in the army, on a base in Kansas, from a man named Sotero who charged nothing for the lesson.",
+      "by": "Elena",
+      "year": ""
+    },
+    {
+      "text": "The last head he cut was his own, the week before he went into the hospital.",
+      "by": "Delia",
+      "year": "2011"
+    },
+    {
+      "text": "He never learned to drive. He walked to the shop in the dark and walked home in the dark.",
+      "by": "Rosa",
+      "year": ""
+    }
+  ]
+}

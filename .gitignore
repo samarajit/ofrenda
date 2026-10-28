@@ -1,0 +1,31 @@
+# the record itself. one file per person, never committed.
+data/
+*.broken.json
+
+# model weights and the local runtime. fetched, not tracked.
+models/*.gguf
+models/*.part
+vendor/llama.cpp/
+
+# keepsakes written by `ofrenda.py keepsake`
+recuerdo.html
+recuerdo.txt
+
+# my own working notes on the submission, not part of the project
+SUBMISSION.md
+ofrenda-report.md
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# editors and desktops
+.DS_Store
+.idea/
+.vscode/
+*.swp

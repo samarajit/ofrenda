@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ofrenda</title>
+<meta name="description" content="A private altar that remembers out loud, running a local open-weight model.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23140d0a'/%3E%3Cpath d='M16 7c3 3.4 5 6 5 8.6A5 5 0 0 1 11 16c0-2.6 2-5.2 5-9z' fill='%23f0a23a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="room">
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="marks">
+      <h1 class="wordmark">Ofrenda</h1>
+      <p class="tagline">an altar that remembers out loud</p>
+    </div>
+    <div class="signal" id="signal">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="signal-text">reading the record</span>
+    </div>
+  </header>
+
+  <main class="stage">
+
+    <section class="altar" aria-label="The altar">
+      <div class="altar-glow" aria-hidden="true"></div>
+
+      <svg class="altar-art" viewBox="0 0 560 700" role="img" aria-labelledby="altar-title">
+        <title id="altar-title">An ofrenda with three tiers, candles, marigolds, pan de muerto, a glass of water and a photograph</title>
+        <defs>
+          <radialGradient id="wall" cx="50%" cy="28%" r="78%">
+            <stop offset="0%" stop-color="#2a1a13"/>
+            <stop offset="55%" stop-color="#180f0c"/>
+            <stop offset="100%" stop-color="#0b0706"/>
+          </radialGradient>
+          <radialGradient id="nicheGlow" cx="50%" cy="38%" r="60%">
+            <stop offset="0%" stop-color="#7a3f1c" stop-opacity=".55"/>
+            <stop offset="60%" stop-color="#3a1d11" stop-opacity=".18"/>
+            <stop offset="100%" stop-color="#150d0a" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="cloth" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8c2b23"/>
+            <stop offset="45%" stop-color="#701f1b"/>
+            <stop offset="100%" stop-color="#4d1512"/>
+          </linearGradient>
+          <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6d4530"/>
+            <stop offset="40%" stop-color="#4b2c1e"/>
+            <stop offset="100%" stop-color="#2e1a12"/>
+          </linearGradient>
+          <linearGradient id="wax" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#d8c6a4"/>
+            <stop offset="35%" stop-color="#f6ead0"/>
+            <stop offset="70%" stop-color="#e2d0ae"/>
+            <stop offset="100%" stop-color="#c0ab8a"/>
+          </linearGradient>
+          <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8b96a"/>
+            <stop offset="50%" stop-color="#b9812f"/>
+            <stop offset="100%" stop-color="#8a5a1c"/>
+          </linearGradient>
+          <radialGradient id="flameCore" cx="50%" cy="70%" r="60%">
+            <stop offset="0%" stop-color="#fff6d8"/>
+            <stop offset="45%" stop-color="#ffd27a"/>
+            <stop offset="100%" stop-color="#ff9a3c"/>
+          </radialGradient>
+          <radialGradient id="warmth" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffb257" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#ffb257" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="bread" cx="42%" cy="34%" r="70%">
+            <stop offset="0%" stop-color="#e3b877"/>
+            <stop offset="70%" stop-color="#c28f4f"/>
+            <stop offset="100%" stop-color="#9c6c34"/>
+          </radialGradient>
+          <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="7"/>
+          </filter>
+          <filter id="softer" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="16"/>
+          </filter>
+          <mask id="cut">
+            <rect width="52" height="46" fill="#fff"/>
+            <path d="M26 9l5 5-5 5-5-5z" fill="#000"/>
+            <circle cx="12" cy="21" r="3.4" fill="#000"/>
+            <circle cx="40" cy="21" r="3.4" fill="#000"/>
+            <path d="M26 27l4 6h-8z" fill="#000"/>
+            <path d="M4 36h8v1H4zM40 36h8v1h-8z" fill="#000"/>
+          </mask>
+          <clipPath id="photoClip">
+            <rect x="212" y="176" width="136" height="150" rx="3"/>
+          </clipPath>
+          <g id="marigold">
+            <g class="petals-ring">
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#e88f2c"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#f3ab3e" transform="rotate(36)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#dd7f24" transform="rotate(72)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#f6bb55" transform="rotate(108)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#e88f2c" transform="rotate(144)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#f3ab3e" transform="rotate(180)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#dd7f24" transform="rotate(216)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#f6bb55" transform="rotate(252)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#e88f2c" transform="rotate(288)"/>
+              <ellipse rx="4.4" ry="8" cy="-6.6" fill="#f3ab3e" transform="rotate(324)"/>
+            </g>
+            <circle r="4.2" fill="#a85c1c"/>
+            <circle r="2" fill="#7d4315"/>
+          </g>
+          <g id="candle">
+            <rect x="-7" y="-58" width="14" height="58" rx="2" fill="url(#wax)"/>
+            <rect x="-7" y="-58" width="5" height="58" fill="#fff8e8" opacity=".35"/>
+            <ellipse cx="0" cy="-58" rx="7" ry="2.6" fill="#fdf3dd"/>
+            <rect x="-0.7" y="-64" width="1.4" height="6" fill="#3b2a1c"/>
+          </g>
+        </defs>
+
+        <rect width="560" height="700" fill="url(#wall)"/>
+
+        <!-- papel picado -->
+        <g class="picado" aria-hidden="true">
+          <path d="M-20 30 Q140 54 280 34 Q420 14 580 38" fill="none" stroke="#6a4a33" stroke-width="1.2" opacity=".7"/>
+          <g transform="translate(6,30)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#c8493f" mask="url(#cut)"/></g>
+          <g transform="translate(64,32)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#d9902f" mask="url(#cut)"/></g>
+          <g transform="translate(122,33)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#4a857a" mask="url(#cut)"/></g>
+          <g transform="translate(180,34)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#b25a81" mask="url(#cut)"/></g>
+          <g transform="translate(238,34)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#d8b04a" mask="url(#cut)"/></g>
+          <g transform="translate(296,33)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#c8493f" mask="url(#cut)"/></g>
+          <g transform="translate(354,32)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#d9902f" mask="url(#cut)"/></g>
+          <g transform="translate(412,31)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#4a857a" mask="url(#cut)"/></g>
+          <g transform="translate(470,31)"><path d="M0 0H52V34Q43.3 45 34.7 34Q26 45 17.3 34Q8.7 45 0 34Z" fill="#b25a81" mask="url(#cut)"/></g>
+        </g>
+
+        <!-- niche -->
+        <path d="M104 250a176 176 0 0 1 352 0v328H104z" fill="#160e0b"/>
+        <path d="M104 250a176 176 0 0 1 352 0v328H104z" fill="url(#nicheGlow)"/>
+        <path d="M104 250a176 176 0 0 1 352 0v328H104z" fill="none" stroke="#5d3520" stroke-width="2.5"/>
+        <path d="M118 250a162 162 0 0 1 324 0v310H118z" fill="none" stroke="#6d4426" stroke-width="1" stroke-dasharray="1 7" opacity=".8"/>
+
+        <!-- garland of marigolds over the arch -->
+        <g class="garland" aria-hidden="true">
+          <path d="M108 262 Q280 132 452 262" fill="none" stroke="#3f2a1a" stroke-width="2"/>
+          <use href="#marigold" x="128" y="248" transform="rotate(-14 128 248)"/>
+          <use href="#marigold" x="168" y="216" transform="rotate(9 168 216)"/>
+          <use href="#marigold" x="216" y="192" transform="rotate(-6 216 192)"/>
+          <use href="#marigold" x="280" y="184" transform="rotate(12 280 184)"/>
+          <use href="#marigold" x="344" y="192" transform="rotate(-9 344 192)"/>
+          <use href="#marigold" x="392" y="216" transform="rotate(6 392 216)"/>
+          <use href="#marigold" x="432" y="248" transform="rotate(-12 432 248)"/>
+        </g>
+
+        <!-- top tier: portrait -->
+        <rect x="205" y="169" width="150" height="164" rx="4" fill="url(#gold)"/>
+        <rect x="208" y="172" width="144" height="158" rx="2" fill="#1d120d"/>
+        <g clip-path="url(#photoClip)">
+          <rect x="212" y="176" width="136" height="150" fill="#2a1a12"/>
+          <image id="portrait" x="212" y="176" width="136" height="150" preserveAspectRatio="xMidYMid slice" style="display:none"/>
+          <text id="monogram" x="280" y="268" text-anchor="middle" font-family="Iowan Old Style, Palatino Linotype, Palatino, Georgia, serif" font-size="58" fill="#c9a06a" opacity=".85">A</text>
+        </g>
+        <rect x="205" y="169" width="150" height="164" rx="4" fill="none" stroke="#f0cf8f" stroke-opacity=".35"/>
+        <circle cx="280" cy="163" r="3" fill="#b9812f"/>
+
+        <rect x="160" y="333" width="240" height="13" rx="2" fill="url(#wood)"/>
+        <rect x="160" y="333" width="240" height="3" fill="#8f6746" opacity=".55"/>
+        <rect x="196" y="346" width="168" height="26" rx="2" fill="#20150f" stroke="#6d4426" stroke-width="1"/>
+        <text id="plaque-name" x="280" y="359" text-anchor="middle" font-family="Iowan Old Style, Palatino, Georgia, serif" font-size="10.5" letter-spacing="2.2" fill="#dcbf93">ABRAM FLORES</text>
+        <text id="plaque-dates" x="280" y="368" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="6.6" letter-spacing="1.6" fill="#9a7a58">1931  TO  2011</text>
+
+        <!-- candles on the top tier -->
+        <g class="candle" transform="translate(178,333)">
+          <use href="#candle"/>
+          <g class="flame" transform="translate(0,-64)">
+            <ellipse cy="-11" rx="26" ry="30" fill="url(#warmth)"/>
+            <path d="M0 0c5.2-6.6 8-11 8-15.4A8 8 0 0 0 0-23a8 8 0 0 0-8 7.6C-8-11-5.2-6.6 0 0z" fill="url(#flameCore)" filter="url(#soft)"/>
+            <path d="M0-4c2.6-3.6 4-6 4-8.4A4 4 0 0 0 0-16a4 4 0 0 0-4 3.6c0 2.4 1.4 4.8 4 8.4z" fill="#fff8e2"/>
+          </g>
+        </g>
+        <g class="candle" style="--d:-.7s" transform="translate(382,333)">
+          <use href="#candle"/>
+          <g class="flame" transform="translate(0,-64)">
+            <ellipse cy="-11" rx="26" ry="30" fill="url(#warmth)"/>
+            <path d="M0 0c5.2-6.6 8-11 8-15.4A8 8 0 0 0 0-23a8 8 0 0 0-8 7.6C-8-11-5.2-6.6 0 0z" fill="url(#flameCore)" filter="url(#soft)"/>
+            <path d="M0-4c2.6-3.6 4-6 4-8.4A4 4 0 0 0 0-16a4 4 0 0 0-4 3.6c0 2.4 1.4 4.8 4 8.4z" fill="#fff8e2"/>
+          </g>
+        </g>
+
+        <!-- cloth under the top tier -->
+        <path d="M160 346h240v52l-16 8-16-8-16 8-16-8-16 8-16-8-16 8-16-8-16 8-16-8-16 8-16-8-16 8z" fill="url(#cloth)" opacity=".9"/>
+        <path d="M160 346h240v7h-240z" fill="#c98a2e" opacity=".5"/>
+
+        <!-- middle tier -->
+        <rect x="112" y="440" width="336" height="14" rx="2" fill="url(#wood)"/>
+        <rect x="112" y="440" width="336" height="3" fill="#8f6746" opacity=".5"/>
+
+        <!-- glass of water -->
+        <g transform="translate(150,440)">
+          <path d="M-14-2h28l-3-40h-22z" fill="#cfe0dd" opacity=".13"/>
+          <path d="M-12.6-6h25l-2.4-32h-20.2z" fill="#bcd6d4" opacity=".22"/>
+          <path d="M-14-2h28l-3-40h-22z" fill="none" stroke="#9fc4c0" stroke-width="1" opacity=".45"/>
+          <ellipse cy="-6" rx="12.4" ry="2.6" fill="#d8eae7" opacity=".28"/>
+        </g>
+
+        <!-- pan de muerto -->
+        <g transform="translate(280,438)">
+          <ellipse cy="6" rx="52" ry="7" fill="#0d0806" opacity=".55"/>
+          <ellipse cy="0" rx="46" ry="10" fill="#5b4a3a"/>
+          <ellipse cy="-2" rx="42" ry="8.6" fill="#d9cdb8"/>
+          <ellipse cy="-11" rx="34" ry="17" fill="url(#bread)"/>
+          <path d="M-34-11a34 17 0 0 1 68 0" fill="none" stroke="#8a5c2a" stroke-width="1.2" opacity=".4"/>
+          <g stroke="#a9743a" stroke-width="3.4" stroke-linecap="round">
+            <path d="M-18-16l6 12"/><path d="M18-16l-6 12"/>
+            <path d="M-6-24l3 10"/><path d="M6-24l-3 10"/>
+          </g>
+          <circle cy="-26" r="5" fill="#eabf83"/>
+          <path d="M-4-26h8" stroke="#a9743a" stroke-width="2"/>
+        </g>
+
+        <!-- salt -->
+        <g transform="translate(410,436)">
+          <ellipse cy="4" rx="20" ry="4" fill="#0d0806" opacity=".5"/>
+          <path d="M-18 0a18 8 0 0 0 36 0z" fill="#6d5b49"/>
+          <ellipse cy="0" rx="18" ry="7.4" fill="#d8cbb4"/>
+          <ellipse cy="-1" rx="13" ry="5.2" fill="#efe6d4"/>
+          <path d="M-5-3l2 2-2 2-2-2zM4-2l1.6 1.6L4-1 2.4.4z" fill="#fff" opacity=".8"/>
+        </g>
+
+        <path d="M112 454h336v56l-18 9-18-9-18 9-18-9-18 9-18-9-18 9-18-9-18 9-18-9-18 9-18-9-18 9-18-9-18 9-18-9-18 9-18-9-18 9-18-9z" fill="url(#cloth)" opacity=".92"/>
+        <path d="M112 454h336v8h-336z" fill="#c98a2e" opacity=".45"/>
+
+        <!-- marigolds on the middle tier -->
+        <use href="#marigold" x="200" y="452" transform="rotate(-18 200 452) scale(1.1)"/>
+        <use href="#marigold" x="350" y="450" transform="rotate(14 350 450)"/>
+        <use href="#marigold" x="242" y="448" transform="rotate(28 242 448) scale(.9)"/>
+
+        <!-- bottom tier -->
+        <rect x="70" y="576" width="420" height="15" rx="2" fill="url(#wood)"/>
+        <rect x="70" y="576" width="420" height="3" fill="#8f6746" opacity=".45"/>
+
+        <g class="candle" style="--d:-1.4s" transform="translate(110,576)">
+          <use href="#candle" transform="scale(.86)"/>
+          <g class="flame" transform="translate(0,-55)">
+            <ellipse cy="-10" rx="24" ry="26" fill="url(#warmth)"/>
+            <path d="M0 0c4.6-5.8 7-9.6 7-13.4A7 7 0 0 0 0-20a7 7 0 0 0-7 6.6C-7-9.6-4.6-5.8 0 0z" fill="url(#flameCore)" filter="url(#soft)"/>
+            <path d="M0-3.4c2.2-3 3.4-5 3.4-7A3.4 3.4 0 0 0 0-14a3.4 3.4 0 0 0-3.4 3.6c0 2 1.2 4 3.4 7z" fill="#fff8e2"/>
+          </g>
+        </g>
+        <g class="candle" style="--d:-2.1s" transform="translate(330,576)">
+          <use href="#candle" transform="scale(.96)"/>
+          <g class="flame" transform="translate(0,-64)">
+            <ellipse cy="-11" rx="26" ry="30" fill="url(#warmth)"/>
+            <path d="M0 0c5.2-6.6 8-11 8-15.4A8 8 0 0 0 0-23a8 8 0 0 0-8 7.6C-8-11-5.2-6.6 0 0z" fill="url(#flameCore)" filter="url(#soft)"/>
+            <path d="M0-4c2.6-3.6 4-6 4-8.4A4 4 0 0 0 0-16a4 4 0 0 0-4 3.6c0 2.4 1.4 4.8 4 8.4z" fill="#fff8e2"/>
+          </g>
+        </g>
+        <g class="candle" style="--d:-.4s" transform="translate(458,576)">
+          <use href="#candle" transform="scale(.78)"/>
+          <g class="flame" transform="translate(0,-50)">
+            <ellipse cy="-9" rx="22" ry="24" fill="url(#warmth)"/>
+            <path d="M0 0c4.2-5.2 6.4-8.8 6.4-12.2A6.4 6.4 0 0 0 0-18a6.4 6.4 0 0 0-6.4 5.8C-6.4-8.8-4.2-5.2 0 0z" fill="url(#flameCore)" filter="url(#soft)"/>
+            <path d="M0-3c2-2.8 3-4.6 3-6.4A3 3 0 0 0 0-13a3 3 0 0 0-3 3.2c0 1.8 1 3.6 3 6.4z" fill="#fff8e2"/>
+          </g>
+        </g>
+
+        <!-- copal -->
+        <g transform="translate(228,576)">
+          <ellipse cy="1" rx="19" ry="4" fill="#0d0806" opacity=".5"/>
+          <path d="M-16-14h32l-4 14h-24z" fill="#7c4a2c"/>
+          <ellipse cy="-14" rx="16" ry="4.6" fill="#9a6138"/>
+          <ellipse cy="-14" rx="10" ry="2.8" fill="#e8a24a" opacity=".8"/>
+          <g class="smoke" stroke="#d9c3a4" stroke-width="1.6" fill="none" opacity=".16" stroke-linecap="round">
+            <path d="M0-18c-8-12 8-18 0-30s6-20 0-30">
+              <animate attributeName="opacity" values="0;.35;0" dur="7s" repeatCount="indefinite"/>
+            </path>
+            <path d="M6-18c8-14-6-20 2-32s-6-18 2-28">
+              <animate attributeName="opacity" values="0;.22;0" dur="9s" begin="1.6s" repeatCount="indefinite"/>
+            </path>
+          </g>
+        </g>
+
+        <path d="M70 591h420v54l-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10-21-10-21 10z" fill="url(#cloth)" opacity=".95"/>
+        <path d="M70 591h420v9h-420z" fill="#c98a2e" opacity=".42"/>
+
+        <!-- marigold garland along the front -->
+        <g aria-hidden="true">
+          <path d="M78 596 Q280 636 482 596" fill="none" stroke="#3f2a1a" stroke-width="2"/>
+          <use href="#marigold" x="104" y="606" transform="rotate(22 104 606)"/>
+          <use href="#marigold" x="150" y="617" transform="rotate(-16 150 617) scale(.94)"/>
+          <use href="#marigold" x="200" y="625" transform="rotate(10 200 625)"/>
+          <use href="#marigold" x="256" y="629" transform="rotate(-8 256 629) scale(1.06)"/>
+          <use href="#marigold" x="312" y="628" transform="rotate(16 312 628)"/>
+          <use href="#marigold" x="364" y="622" transform="rotate(-12 364 622) scale(.92)"/>
+          <use href="#marigold" x="416" y="611" transform="rotate(18 416 611)"/>
+          <use href="#marigold" x="458" y="601" transform="rotate(-20 458 601) scale(.96)"/>
+        </g>
+
+        <ellipse cx="280" cy="676" rx="230" ry="18" fill="url(#warmth)" opacity=".25" filter="url(#softer)"/>
+      </svg>
+
+      <div class="petals" id="petals" aria-hidden="true"></div>
+
+      <div class="cards-strip" id="cardstrip" aria-label="Cards left on the altar"></div>
+    </section>
+
+    <section class="velador" aria-label="The conversation">
+      <header class="velador-head">
+        <div>
+          <p class="eyebrow">Velador</p>
+          <p class="who" id="who">the altar is dark</p>
+        </div>
+        <div class="head-actions">
+          <button class="ghost-btn" id="open-cards" type="button">Leave a memory</button>
+          <button class="ghost-btn" id="end-night" type="button" hidden>End the night</button>
+        </div>
+      </header>
+
+      <div class="transcript" id="transcript" aria-live="polite">
+        <div class="invitation" id="invitation">
+          <p class="invite-line">Nobody is here yet.</p>
+          <p class="invite-sub">Light the candles and the cards will speak for the people who wrote them. The model that carries their words runs from a file on this machine, so the night works with the internet off.</p>
+          <button class="light" id="light" type="button">
+            <span class="light-flame" aria-hidden="true"></span>
+            Light the candles
+          </button>
+        </div>
+      </div>
+
+      <div class="chips" id="chips" hidden></div>
+
+      <form class="ask" id="ask" autocomplete="off">
+        <label class="sr-only" for="question">Ask what the cards hold</label>
+        <input id="question" name="question" type="text" placeholder="Ask what the cards hold" maxlength="300" disabled>
+        <button id="send" type="submit" aria-label="Ask the altar" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+
+      <footer class="velador-foot">
+        <span id="privacy">Nothing leaves this machine.</span>
+        <span class="foot-links">
+          <button class="text-btn" id="switch-altar" type="button">another altar</button>
+          <button class="text-btn" id="about-btn" type="button">how it works</button>
+        </span>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<!-- welcome -->
+<dialog id="welcome" class="sheet dark">
+  <div class="sheet-body">
+    <p class="eyebrow">Before the candles</p>
+    <h2 class="sheet-title">Whose altar is this?</h2>
+    <p class="sheet-copy">Start with one of these families, or open an empty altar and leave the first memory yourself.</p>
+    <div class="altar-choices" id="altar-choices"></div>
+    <div class="sheet-foot">
+      <button class="text-btn" id="start-empty" type="button">start with an empty altar</button>
+      <button class="ghost-btn" id="welcome-close" type="button">stay here</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- cards -->
+<dialog id="cards" class="sheet paper">
+  <div class="sheet-body">
+    <div class="sheet-head">
+      <div>
+        <p class="eyebrow">The record</p>
+        <h2 class="sheet-title" id="cards-title">What the family remembers</h2>
+      </div>
+      <button class="icon-btn" id="cards-close" type="button" aria-label="Close">Close</button>
+    </div>
+
+    <ul class="card-list" id="card-list"></ul>
+
+    <form id="card-form" class="leave">
+      <p class="eyebrow">Leave a memory</p>
+      <textarea id="card-text" rows="3" maxlength="420" placeholder="One thing they did, said, or kept. A detail is worth more than a summary." required></textarea>
+      <div class="two-up">
+        <label>Who remembers it
+          <input id="card-by" type="text" maxlength="40" placeholder="Rosa">
+        </label>
+        <label>Year, if you know it
+          <input id="card-year" type="text" maxlength="10" placeholder="1998">
+        </label>
+      </div>
+      <div class="leave-foot">
+        <p class="hint" id="card-hint">Cards stay on this machine. They are the only source the altar may speak from.</p>
+        <button class="solid" type="submit">Leave the memory</button>
+      </div>
+    </form>
+
+    <div class="person-edit">
+      <p class="eyebrow">The person</p>
+      <div class="two-up">
+        <label>Name <input id="p-name" type="text" maxlength="80"></label>
+        <label>Called <input id="p-called" type="text" maxlength="40"></label>
+      </div>
+      <div class="two-up three">
+        <label>Born <input id="p-born" type="text" maxlength="20"></label>
+        <label>Died <input id="p-died" type="text" maxlength="20"></label>
+        <label>Relation <input id="p-relation" type="text" maxlength="80"></label>
+      </div>
+      <div class="photo-row">
+        <label class="file-btn">Put up a photograph<input id="photo" type="file" accept="image/*" hidden></label>
+        <button class="text-btn" id="photo-clear" type="button">take it down</button>
+        <span class="hint">The photograph never leaves this browser tab.</span>
+      </div>
+      <div class="leave-foot">
+        <span></span>
+        <button class="ghost-btn" id="person-save" type="button">Save the person</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- keepsake -->
+<dialog id="keepsake" class="sheet dark">
+  <div class="sheet-body">
+    <p class="eyebrow">The recuerdo</p>
+    <h2 class="sheet-title">The cards, kept</h2>
+    <p class="sheet-copy">This is the same page the altar printed: the closing line, then every card in the family's own words. It is written on this machine. There is no other copy.</p>
+    <div class="keepsake-preview" id="keepsake-preview"></div>
+    <div class="sheet-foot">
+      <button class="text-btn" id="keepsake-close" type="button">close</button>
+      <button class="solid" id="keepsake-download" type="button">Download the recuerdo</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- about -->
+<dialog id="about" class="sheet dark">
+  <div class="sheet-body prose">
+    <p class="eyebrow">How it works</p>
+    <h2 class="sheet-title">A small model, held to the cards</h2>
+    <p>Ofrenda runs llama.cpp on this machine and loads an open-weight Qwen3 1.7B model from a file in <code>./models</code>. There is no API key, no account, and no outbound request, so the altar works with the internet off.</p>
+    <p>The model is not allowed to invent. It must copy a phrase from one of the family's cards, say which card it took it from, and then write two sentences around it. Ofrenda checks that phrase against the card. If it does not match, the answer is refused, tried again, and finally replaced with the card itself, read word for word.</p>
+    <p>Your record is <code>data/altar.json</code>. The photograph you put up stays in this browser. Delete the file and it is gone.</p>
+    <p class="small">Every GGUF model you like will work here. Swap the file, or point Ofrenda at a server you already run with <code>OFRENDA_BACKEND</code>.</p>
+    <div class="sheet-foot"><span></span><button class="ghost-btn" id="about-close" type="button">back to the altar</button></div>
+  </div>
+</dialog>
+
+<script src="/app.js"></script>
+</body>
+</html>

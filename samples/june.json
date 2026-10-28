@@ -1,0 +1,54 @@
+{
+  "id": "june",
+  "label": "June Park, sysop",
+  "blurb": "One phone line, 300 baud, and every caller greeted by name.",
+  "person": {
+    "name": "June Park",
+    "called": "JP",
+    "born": "1954",
+    "died": "1998",
+    "relation": "mother, ran a bulletin board called The Marigold from the spare room"
+  },
+  "cards": [
+    {
+      "text": "She ran a bulletin board called The Marigold off one phone line in the spare room, and the computer had to be off the hook to answer it.",
+      "by": "Sam",
+      "year": "1991"
+    },
+    {
+      "text": "The modem ran at 300 baud, so a single paragraph of ASCII art took four minutes to draw on your screen.",
+      "by": "Sam",
+      "year": ""
+    },
+    {
+      "text": "She wrote the welcome screen herself, one character at a time, and it ended with a rose made of punctuation marks.",
+      "by": "Nora",
+      "year": ""
+    },
+    {
+      "text": "She greeted every caller by name when they logged on, even the ones who only came back to complain about the busy signal.",
+      "by": "Nora",
+      "year": ""
+    },
+    {
+      "text": "Nora remembers that she joined in on every message thread, usually at two in the morning.",
+      "by": "Nora",
+      "year": ""
+    },
+    {
+      "text": "Sam remembers that she never posted in a message thread, because the sysop was supposed to stay out of it.",
+      "by": "Sam",
+      "year": ""
+    },
+    {
+      "text": "She typed with two fingers, and she could hear the modem answer from the kitchen before anyone else did.",
+      "by": "Sam",
+      "year": ""
+    },
+    {
+      "text": "When the phone company changed the line in 1997, she printed the whole message archive on continuous paper and kept it in a box.",
+      "by": "Nora",
+      "year": "1997"
+    }
+  ]
+}
